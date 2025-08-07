@@ -1,0 +1,45 @@
+{
+    "float64" : false,
+    "fname_train" : "datasets/si_train0.traj",
+    "fname_val"   : "datasets/si_val0.traj",
+    "model" : "race_qml",
+    "qml_circuit": "cx",
+    "cutoff" :  4.5,
+    "avg_num_neighbors": 25,
+    "num_radial_basis" : 8,
+    "num_species" : 1,
+    "element" : [14],
+    "enr_avg_per_element" : [-106.20],
+    "nbatch" : 20,
+    "hidden_irreps" : "64x0e + 64x0o + 64x1o + 64x1e + 8x2o + 8x2e",
+    "nlayers" : 5,
+    "features_dim" : 64,
+    "NN" : {
+    	"rng_seed" :  311,
+    	"learning_rate" : 0.01,
+    	"nepoch" : 25000,
+    	"nsave": 100,
+    	"restart" : false,
+    	"fname_pkl" : "input_race_qml_cx/chpt_race_qml_cx.pkl",
+	    "l2_lambda" : 0.005,
+        "patience" : 50,
+        "decay_factor" :0.9,
+        "ema_decay" : 0.99
+    },
+    "train" : {
+	    "fname_log" : "input_race_qml_cx/loss_race_qml_cx.out"
+        
+    },
+    "MD" : {
+        "fname_xyz" : "datasets/si_test.xyz",
+        "fname_traj": "input_race_qml_cx/md_race_qml_cx.traj",
+        "fname_log" : "input_race_qml_cx/md_race_qml_cx.log",
+        "temperature" : 2000
+    },
+    "MC" : {
+        "fname_xyz" : "datasets/si_test.xyz",
+        "fname_traj": "input_race_qml_cx/mc_race_qml_cx.traj",
+        "fname_log" : "input_race_qml_cx/mc_race_qml_cx.log",
+        "temperature": 2000
+    }
+}
